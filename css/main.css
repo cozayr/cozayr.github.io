@@ -1,0 +1,454 @@
+﻿body, html {
+    font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
+}
+html {
+    overflow-x: hidden;
+}
+
+.show {
+    animation-delay: .8s;
+    animation-duration: .7s;
+    animation-name: show;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.highlight {
+    animation-duration: .7s;
+    animation-name: highlight;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#content {
+    left: -100vw;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    background: #fff;
+    z-index: 2000;
+    overflow-y: hidden;
+    transition: left .6s;
+    transition-timing-function: cubic-bezier(.25,.1,.25,1);
+}
+
+.showContent {
+    left: 0 !important;
+    transition: left .4s;
+    transition-timing-function: cubic-bezier(.25,.1,.25,1);
+}
+
+    .showContent .header {
+        top: 0 !important;
+        opacity: 1;
+        transition: top 1s, opacity 3s, background .7s;
+        transition-delay: .6s;
+        transition-timing-function: cubic-bezier(.25,.1,.11,1.02);
+    }
+
+    .showContent .content-body {
+        top: 0 !important;
+        opacity: 1;
+        transition: top 1s, opacity 3s;
+        transition-delay: .6s;
+        transition-timing-function: cubic-bezier(.25,.1,.11,1.02);
+        overflow-y: scroll;
+    }
+
+.header {
+    top: -100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+    transition: opacity .7s, top .7s;
+}
+
+    .header h1 {
+        line-height: 7rem;
+        color: #fff;
+        font-size: 7rem;
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        left: 0%;
+        margin-right: 0;
+        transition: left 1s, opacity .4s, margin-right .7s;
+    }
+
+.content-body {
+    opacity: 0;
+    top: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    transition: opacity .7s, top .7s;
+}
+
+.content-body p {
+    padding: 0 5%;
+    font-size: 150%;
+    font-family: 'Open Sans';
+    font-weight: 100;
+}
+
+    .content-body p.sub {
+        line-height: 1.7rem;
+        padding: 0 5%;
+        font-size: 120%;
+        font-family: 'Open Sans';
+        font-weight: 100;
+    }
+
+.makeRoom {
+    left: 60% !important;
+    transition: left 1s;
+    transition-timing-function: cubic-bezier(.25,.1,.11,1.02);
+}
+
+#content.makeRoom .header h1 {
+    opacity: 0;
+    margin-right: -100%;
+    transition: opacity 0.7s, margin-right .7s;
+    transition-delay: 1s;
+}
+
+.bun {
+    width: 80%;
+    height: 82vh;
+    margin: 4vh auto;
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.patty {
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    opacity: .8;
+    transform: scale(1, 1);
+    transition: width .7s, opacity .4s, transform .1s;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 3rem;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+    .patty:hover {
+        opacity: 1;
+        transition: width .4s, opacity .4s, transform .4s, z-index .1s;
+        z-index: 1000;
+    }
+
+    .pattys:hover {
+        animation-duration: .7s;
+        animation-name: highlight;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+#cheese {
+    background: #e4e6ae;
+    opacity: 0;
+    border-radius: 50vh;
+    padding: 10px;
+    width: 10vh;
+    height: 10vh;
+    position: fixed;
+    z-index: 1000;
+    -webkit-backface-visibility: hidden;
+    transform: scale(1);
+    transition: transform 0s, opacity 0s;
+}
+
+.meltCheese {
+    transform: scale(40) !important;
+    opacity: 1 !important;
+    -webkit-backface-visibility: hidden;
+    transition: transform 1s, opacity .1s !important;
+    transition-timing-function: cubic-bezier(.25,.1,.25,1);
+}
+#breadcrumb {
+    font-family: 'Montserrat';
+    font-weight: 100;
+    color: #888;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0 5%;
+}
+    #breadcrumb a {
+        font-family: 'Montserrat';
+        font-weight: 100;
+        color: #888;
+        text-decoration: none;
+        font-weight: bold;
+        opacity: .5;
+    }
+
+#navigation {
+    position: absolute;
+    width: 60vw;
+    left: -60vw;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #333;
+    z-index: 3000;
+    transition: left .7s, width .7s;
+}
+
+#navigation section {
+    opacity: 0;
+    margin-left: 0;
+    transition: opacity .4s, margin-left .4s;
+
+}
+    #navigation section a {
+        display: block;
+        font-weight: 800;
+        font-size: 4rem;
+        color: #fff;
+        text-decoration: none;
+        width: 100%;
+        transform: scale(1);
+        transition: transform .7s;
+    }
+
+#navigation section a:hover {
+    
+}
+    #navigation.showNavigation section {
+        opacity: 1;
+        margin-left: 15%; 
+        transition: opacity .7s, left .7s, margin-left .7s;
+        transition-delay: .7s;
+    }
+
+.showNavigation {
+    left: 0 !important;
+    transition: left .6s;
+    transition-timing-function: cubic-bezier(.25,.1,.11,1.02);
+}
+
+#navigation.navigationisloading section {
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.navigationisloading {
+    width: 100vw !important;
+    transition: width .7s;
+}
+
+#opennavigation {
+    text-align: center;
+    width: 3vw;
+    height: 3vw;
+    font-size: 2rem;
+    position: absolute;
+    color: #333;
+    top: .5vw;
+    left: -10vw;
+    text-decoration: none;
+    z-index: 3000;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    animation-duration: .5s;
+    animation-name: wobblenav;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transition: left 1s;
+}
+
+    #opennavigation:hover {
+        animation-duration: .1s;
+    }
+
+    #opennavigation img {
+        width: 100%;
+    }
+
+.shownav {
+    left: .5vw !important;
+    transition: left 1s;
+
+}
+
+
+#intro {
+    opacity: 1;
+    background: none;
+    font-size: 2rem;
+    color: #000;
+}
+#intro img {
+    width: 50%;
+}
+
+#me {
+    background: #E74C3C;
+}
+
+#work {
+    background-color: #2C3E50;
+}
+
+
+#contact {
+    background: #3498DB;
+}
+
+#social {
+    background:#2980B9;
+}
+
+.panel {
+    min-height: 100vh;   
+    width: 100vw;
+}
+
+.slide {
+    animation-duration: .7s;
+    animation-name: slidein;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#intro {
+    
+}
+
+.half {
+    width: 50%;
+    background: #444;
+}
+
+.showloading {
+    opacity: 1 !important;
+    transform: scale(5);
+    transition: opacity .7s, transform .7s;
+}
+
+#loading {
+    position: absolute;
+    opacity: 0;
+    transform: scale(1);
+    top: 45vh;
+    left: 44vw;
+    width: 10vh;
+    height: 10vh;
+    background: #fff;
+    border-radius: 100vw;
+    z-index: 10000;
+    animation-duration: .2s;
+    animation-name: wobble;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity .7s, transform .7s, top .7s, left .7s;
+}
+
+#vid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    min-width: 120vw;
+    min-height: 100vh;
+
+}
+
+
+@keyframes slidein {
+    from {
+       
+    }
+
+    to {
+        background-color: #deaeff;
+        width: 50vw;
+    }
+}
+
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: scale(.01);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        transform: translate(0,0);
+    }
+}
+
+@keyframes highlight {
+    from {
+        box-shadow: none;
+        width: 40%;
+    }
+
+    to {
+        width: 41%;
+        
+        z-index: 1000;
+        background: #cc88fb;
+    }
+}
+
+@keyframes wobble {
+    from {
+        transform: scale(.4);
+        box-shadow: none;
+    }
+
+    to {
+        transform: scale(1.2);
+        box-shadow: 0px 0px 30px #fff;
+    }
+}
+
+@keyframes wobblenav {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.7);
+    }
+}

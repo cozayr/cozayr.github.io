@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="theme-color" content="#000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mediaqueries.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app">
+
+        <div class="bun" id="bun">
+
+            <div id="intro" class="patty">
+                <img src="logo.png" />
+            </div>
+
+            <a id="me" href="about" class="patty" onclick="load('#E74C3C', 'about');  event.preventDefault();">
+                about
+            </a>
+
+            <a id="work" href="work" class="patty" onclick="load('#2C3E50', 'work');  event.preventDefault();">
+                work
+            </a>
+
+            <a id="contact" href="#" class="patty" onclick="load('#3498DB', 'contact');  event.preventDefault();">
+                contact
+            </a>
+
+
+
+        </div>
+
+
+
+        <div id="content">
+
+
+        </div>
+
+        <div id="navigation">
+            <section>
+                <a href="#" onclick="gohome(); event.preventDefault();">Home</a>
+                <a href="#" onclick="loadFromMenu('#E74C3C', 'about')">About</a>
+                <a href="#" onclick="loadFromMenu('#E74C3C', 'work')">Work</a>
+                <a href="#" onclick="loadFromMenu('#E74C3C', 'contact')">Contact</a>
+            </section>
+        </div>
+
+        <a href="#" id="opennavigation" onclick="toggleNavigation(); event.preventDefault();"><img src="../menu.png" /></a>
+
+    </div>
+
+    <div id="cheese"></div>
+    <div id="loading"></div>
+
+    <video id="vid" autoplay muted loop id="myVideo">
+        <source src="working.mp4" type="video/mp4">
+    </video>
+
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>
